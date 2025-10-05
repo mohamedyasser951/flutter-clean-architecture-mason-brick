@@ -83,5 +83,5 @@ vars:
     prompt: Does this feature require authentication?
     default: true
 
-hooks:
-  post_gen: dart pub get
+# hooks:
+#   post_gen: dart pub get
