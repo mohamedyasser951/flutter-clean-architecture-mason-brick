@@ -1,0 +1,87 @@
+name: flutter_clean_architecture_feature
+description: A comprehensive Flutter clean architecture feature template with Cubit state management, supporting both pagination and simple patterns
+version: 1.0.0
+
+vars:
+  feature_name:
+    type: string
+    description: The name of the feature (e.g., user_profile, product_list)
+    prompt: What is the feature name?
+    default: sample_feature
+  
+  module_name:
+    type: string
+    description: The module/domain name (e.g., merchants, employees, core_features)
+    prompt: What is the module name?
+    default: sample_module
+  
+  cubit_type:
+    type: enum
+    description: Type of cubit pattern to use
+    values:
+      - pagination
+      - simple
+    prompt: What type of cubit pattern do you need?
+    default: pagination
+  
+  has_remote_data_source:
+    type: boolean
+    description: Whether this feature needs remote data source
+    prompt: Does this feature need remote data source?
+    default: true
+  
+  has_local_data_source:
+    type: boolean
+    description: Whether this feature needs local data source
+    prompt: Does this feature need local data source?
+    default: false
+  
+  response_model_name:
+    type: string
+    description: The name of the response model (e.g., UserResponse, ProductResponse)
+    prompt: What is the response model name?
+    default: SampleResponse
+  
+  data_model_name:
+    type: string
+    description: The name of the data model (e.g., User, Product)
+    prompt: What is the data model name?
+    default: SampleData
+  
+  use_case_name:
+    type: string
+    description: The name of the use case (e.g., GetUser, CreateProduct)
+    prompt: What is the use case name?
+    default: GetSample
+  
+  cubit_name:
+    type: string
+    description: The name of the cubit (e.g., UserCubit, ProductCubit)
+    prompt: What is the cubit name?
+    default: SampleCubit
+  
+  api_endpoint:
+    type: string
+    description: The API endpoint for this feature (e.g., /users, /products)
+    prompt: What is the API endpoint?
+    default: /samples
+  
+  http_method:
+    type: enum
+    description: The HTTP method for the API call
+    values:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    prompt: What HTTP method does this feature use?
+    default: GET
+  
+  requires_auth:
+    type: boolean
+    description: Whether this feature requires authentication
+    prompt: Does this feature require authentication?
+    default: true
+
+hooks:
+  post_gen: dart pub get
